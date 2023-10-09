@@ -14,6 +14,9 @@ dependencies {
     implementation ("org.apache.httpcomponents:httpclient:4.5.13")
     implementation ("com.google.code.gson:gson:2.8.8")
     testImplementation(kotlin("test"))
+    testImplementation("org.testng:testng:7.1.0")
+    testImplementation ("io.mockk:mockk:1.12.4")
+    testImplementation("junit:junit:4.13.1")
 }
 
 tasks.test {
