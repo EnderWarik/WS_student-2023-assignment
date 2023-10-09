@@ -1,18 +1,18 @@
-package parser
+package parsers
 
-import java.io.File
-import java.io.InputStream
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import model.Replacement
+import java.io.File
+import java.io.InputStream
 
-class ReplacementParser
+class DataParser
 {
-    fun parse(filePath: String): List<Replacement>
+    inline fun <reified T> parse(filePath: String): List<T>
     {
         val inputStream: InputStream = File(filePath).inputStream()
         val jsonString = inputStream.bufferedReader().use { it.readText() }
-        val replacementType = object : TypeToken<List<Replacement>>() {}.type
+        val replacementType = object : TypeToken<List<T>>() {}.type
         return Gson().fromJson(jsonString, replacementType)
     }
+
 }
