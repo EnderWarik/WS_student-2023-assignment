@@ -31,17 +31,6 @@ class MessageFixActionTest
             Message("I norm message"))
 
         val res = fixer.execute(messages,replacement)
-//        every { repository.findByEmail(any()) } returns user
-//
-//
-//        val messageCaptor = slot<List<Message>>()
-//        val replacementCaptor = slot<List<Replacement>>()
-//
-//        val result = service.findByEmail(user.email)
-//
-//        verify { fixer.execute(capture(messageCaptor),capture(replacementCaptor)) }
-//        assertEquals(messageCaptor.captured, messages)
-//        assertEquals(replacementCaptor.captured, replacement)
 
         assertEquals(expectedResult, res)
     }
